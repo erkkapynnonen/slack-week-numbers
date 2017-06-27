@@ -47,6 +47,7 @@ app.post('/', (req, res) => {
   }
   else if (rg.isWeekNumber.test(input)) {
     let parts = input.split(" ");
+    output.text = "Week: " + parts.join(" &hellip; ");
     let date = moment();
     date.locale(locale);
 

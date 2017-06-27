@@ -27,6 +27,7 @@ app.post('/', (req, res) => {
   let input = req.body.text;
   let output = {
     response_type: "ephemeral",
+    text: "Here you go :)",
     title: false,
     attachments: []
   };
@@ -42,7 +43,7 @@ app.post('/', (req, res) => {
 
   // return current week
   if (!input) {
-    output.title = "This is week number " + moment().week();
+    output.text = "This is week number " + moment().week();
   }
   else if (rg.isWeekNumber.test(input)) {
     let parts = input.split(" ");
